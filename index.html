@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PocketSmart AI</title>
+</head>
+<body>
+
+    <h1>💰 PocketSmart AI</h1>
+    <h2>Your Smart Budget & Recommendation Assistant</h2>
+
+    <label>Enter your monthly budget:</label><br>
+    <input type="number" id="budget" placeholder="Enter amount">
+
+    <br><br>
+
+    <label>Enter your expense:</label><br>
+    <input type="number" id="expense" placeholder="Enter amount">
+
+    <br><br>
+
+    <button onclick="checkBudget()">Check Budget</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function checkBudget() {
+            let budget = Number(document.getElementById("budget").value);
+            let expense = Number(document.getElementById("expense").value);
+
+            let balance = budget - expense;
+
+            if (balance >= 0) {
+                document.getElementById("result").innerHTML =
+                    "Remaining Balance: ₹" + balance;
+            } else {
+                document.getElementById("result").innerHTML =
+                    "You have exceeded your budget by ₹" + Math.abs(balance);
+            }
+        }
+    </script>
+
+</body>
+</html>
